@@ -9,7 +9,7 @@ if (canvas && ctx) {
   let frames = 0;
   let score = 0;
   let highScore = localStorage.getItem("dinoHighScore") || 0;
-  
+
   if (highScore > 0 && highScoreEl && highScoreDisplay) {
     highScoreEl.innerText = highScore.toString().padStart(5, '0');
     highScoreDisplay.style.display = "inline";
@@ -19,7 +19,7 @@ if (canvas && ctx) {
   let isGameOver = false;
   let isPlaying = false;
   let spawnTimer = 0;
-  
+
   const pixelSize = 2.5; // Scale multiplier for the pixel art
 
   // ASCII art arrays for 8-bit aesthetic
@@ -45,7 +45,7 @@ if (canvas && ctx) {
     "     xx               ",
     "      xx              "
   ];
-  
+
   const dinoSpriteRun1 = [
     "             xxxxxxxx ",
     "            xxxxxxxxx ",
@@ -104,7 +104,7 @@ if (canvas && ctx) {
     "   xx  ",
     "   xx  "
   ];
-  
+
   const cloudSprite = [
     "      xxxx      ",
     "   xxxxxxxxx    ",
@@ -126,7 +126,7 @@ if (canvas && ctx) {
 
   // Pre-generate scattered ground dust
   const groundDust = [];
-  for(let i=0; i<30; i++) {
+  for (let i = 0; i < 30; i++) {
     groundDust.push({
       x: Math.random() * canvas.width,
       y: (canvas.height - 20) + Math.random() * 10
@@ -179,18 +179,18 @@ if (canvas && ctx) {
     ctx.fillStyle = "#535353";
     // Main horizon line
     ctx.fillRect(0, canvas.height - 20, canvas.width, 1);
-    
+
     // Draw scattered ground dust (sandy color)
     ctx.fillStyle = "#c8c0a8";
-    for(let i=0; i<groundDust.length; i++) {
+    for (let i = 0; i < groundDust.length; i++) {
       let dust = groundDust[i];
       ctx.fillRect(dust.x, dust.y, Math.random() > 0.5 ? 2 : 1, 1);
-      
+
       // Move dust to create parallax effect
-      if(isPlaying) dust.x -= gameSpeed * 0.8;
-      
+      if (isPlaying) dust.x -= gameSpeed * 0.8;
+
       // Loop dust back to right side
-      if(dust.x < 0) {
+      if (dust.x < 0) {
         dust.x = canvas.width;
         dust.y = (canvas.height - 20) + Math.random() * 10;
       }
@@ -232,7 +232,7 @@ if (canvas && ctx) {
       ) {
         isGameOver = true;
       }
-      
+
       // Remove off-screen obstacles and increase score
       if (obs.x + obs.w < 0) {
         obstacles.splice(i, 1);
@@ -282,7 +282,7 @@ if (canvas && ctx) {
       drawGround();
       for (let obs of obstacles) drawSprite(cactusSprite, obs.x, obs.y, "#5ec870");
       drawSprite(dinoSpriteIdle, dino.x, dino.y, "#4fc3f7");
-      
+
       startMsg.innerText = "GAME OVER";
       startMsg.style.display = "block";
       startMsg.style.animation = "none";
@@ -291,7 +291,7 @@ if (canvas && ctx) {
     }
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    
+
     handleClouds();
     drawGround();
     dino.update();
@@ -299,15 +299,15 @@ if (canvas && ctx) {
     handleObstacles();
 
     frames++;
-    if(frames % 10 === 0) {
-        score++;
-        // Update score with zeropadding (e.g. 00042)
-        scoreEl.innerText = score.toString().padStart(5, '0');
+    if (frames % 10 === 0) {
+      score++;
+      // Update score with zeropadding (e.g. 00042)
+      scoreEl.innerText = score.toString().padStart(5, '0');
     }
-    
+
     // Increase difficulty gradually and continuously 
     if (gameSpeed < 12) {
-        gameSpeed += 0.002; 
+      gameSpeed += 0.002;
     }
 
     requestAnimationFrame(animate);
@@ -324,7 +324,7 @@ if (canvas && ctx) {
     isGameOver = false;
     dino.y = canvas.height - 20 - dino.h;
     dino.dy = 0;
-    
+
     // Draw initial view
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     drawGround();
@@ -350,17 +350,18 @@ if (canvas && ctx) {
   // Event Listeners for Spacebar / Up Arrow
   window.addEventListener("keydown", (e) => {
     if (e.code === "Space" || e.code === "ArrowUp") {
-      e.preventDefault(); 
+      e.preventDefault();
       startGame();
     }
   });
 
   const wrapper = document.querySelector(".dino-game-wrapper");
-  if(wrapper) {
+  if (wrapper) {
     wrapper.addEventListener("mousedown", startGame);
     wrapper.addEventListener("touchstart", (e) => {
       e.preventDefault();
       startGame();
-    }, {passive: false});
+    }, { passive: false });
   }
 }
+

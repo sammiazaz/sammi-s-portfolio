@@ -151,7 +151,7 @@ nav {
 .hero-bg {
   position: relative;
   min-height: calc(100vh - 60px);
-  background: 
+  background:
     linear-gradient(to bottom, rgba(200, 184, 232, 0.4), rgba(142, 200, 64, 0.4)),
     url("./assets/e0dea437-5090-436d-a086-e0cec81c5b45.jpg");
   background-attachment: fixed;
@@ -294,20 +294,44 @@ nav {
 }
 
 /* Button & Card Palette */
-.btn-purple { background: #9b7fe8; color: #fff; }
-.btn-dark { background: #1a1a1a; color: #f5f0ff; }
-.btn-green { background: #5ec870; color: #1a1a1a; }
-.card-purple { background: #e8e0f8; }
-.card-yellow { background: #fdf3c8; }
-.card-green { background: #d8f0dc; }
-.card-blue { background: #d0e8f8; }
+.btn-purple {
+  background: #9b7fe8;
+  color: #fff;
+}
+
+.btn-dark {
+  background: #1a1a1a;
+  color: #f5f0ff;
+}
+
+.btn-green {
+  background: #5ec870;
+  color: #1a1a1a;
+}
+
+.card-purple {
+  background: #e8e0f8;
+}
+
+.card-yellow {
+  background: #fdf3c8;
+}
+
+.card-green {
+  background: #d8f0dc;
+}
+
+.card-blue {
+  background: #d0e8f8;
+}
 
 /* ================================================
    6. SKILLS SECTION
    ================================================ */
 .skills-section {
   padding: 40px;
-  background: #e8e0f8; /* Retro purple from palette */
+  background: #e8e0f8;
+  /* Retro purple from palette */
   border: 2px solid #1a1a1a;
   margin: 10px auto 10px;
   max-width: 1000px;
@@ -319,8 +343,10 @@ nav {
 
 .skill-group {
   background: #fff;
-  border: 2px solid #1a1a1a; /* Chunky black borders */
-  border-radius: 0; /* Removing rounded corners for pixel retro aesthetic */
+  border: 2px solid #1a1a1a;
+  /* Chunky black borders */
+  border-radius: 0;
+  /* Removing rounded corners for pixel retro aesthetic */
   padding: 24px;
   position: relative;
   box-shadow: 4px 4px 0 #1a1a1a;
@@ -354,7 +380,8 @@ nav {
   align-items: center;
   justify-content: center;
   padding: 8px 16px;
-  background: #f0ece0; /* Beige */
+  background: #f0ece0;
+  /* Beige */
   border: 2px solid #1a1a1a;
   border-radius: 0;
   color: #1a1a1a;
@@ -368,7 +395,8 @@ nav {
 .skill-tag:hover {
   transform: translate(-2px, -2px);
   box-shadow: 3px 3px 0 #1a1a1a;
-  background: #9b7fe8; /* Violet accent */
+  background: #9b7fe8;
+  /* Violet accent */
   color: #fff;
 }
 
@@ -389,41 +417,192 @@ nav {
   gap: 20px;
 }
 
-.work-card {
-  border: 2px solid #1a1a1a;
-  padding: 24px;
-  background: #fff;
-  transition: transform 0.1s, box-shadow 0.1s;
+.proj-card {
+  position: relative;
+  overflow: hidden;
+  height: 380px;
+  border: 4px solid #1a1a1a;
+  border-radius: 12px;
+  cursor: pointer;
+  background: #222;
+  box-shadow: 4px 4px 0 #1a1a1a;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.work-card:hover {
-  transform: translate(-4px, -4px);
+.proj-card:hover {
+  transform: translate(-2px, -2px);
   box-shadow: 6px 6px 0 #1a1a1a;
 }
 
-.work-thumb {
-  height: 140px;
-  background: #f0f0f0;
-  border: 2px solid #1a1a1a;
-  margin-bottom: 16px;
+.proj-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: filter 0.3s;
+}
+
+.proj-bg-text {
+  font-size: 40px;
+  font-weight: 900;
+  opacity: 0.1;
+  color: #1a1a1a;
+  letter-spacing: 2px;
+}
+
+.proj-plate {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  height: 140px;
+  border: 3px solid #1a1a1a;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  transition: filter 0.3s, opacity 0.3s;
+  z-index: 2;
+}
+
+.proj-icon {
+  font-size: 36px;
+  margin-bottom: 12px;
+}
+
+.proj-title {
+  font-family: 'Space Mono', monospace;
   font-weight: 700;
-  font-size: 12px;
-  letter-spacing: 0.1em;
+  font-size: 14px;
+  text-align: center;
 }
 
-.work-card h3 {
-  font-size: 18px;
+.btn-purple .proj-title {
+  color: #fff;
+}
+
+.btn-dark .proj-title {
+  color: #fff;
+}
+
+.btn-green .proj-title {
+  color: #1a1a1a;
+}
+
+.proj-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.65);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  font-size: 16px;
+  z-index: 5;
+}
+
+.proj-card:hover .proj-bg {
+  filter: blur(8px);
+}
+
+.proj-card:hover .proj-plate {
+  filter: blur(6px);
+  opacity: 0.6;
+}
+
+.proj-card:hover .proj-overlay {
+  opacity: 1;
+}
+
+/* Modal Styling */
+.proj-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 20px;
+}
+
+.proj-modal.active {
+  display: flex;
+}
+
+.modal-box {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  border: 4px solid #1a1a1a;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 8px 8px 0 #1a1a1a;
+}
+
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #1a1a1a;
+}
+
+.btn-dark .modal-close {
+  color: #fff;
+}
+
+.card-purple .modal-close {
+  color: #1a1a1a;
+}
+
+.card-yellow .modal-close {
+  color: #1a1a1a;
+}
+
+.card-green .modal-close {
+  color: #1a1a1a;
+}
+
+.modal-title {
+  font-family: 'Space Mono', monospace;
+  font-size: 24px;
+  font-weight: 700;
   margin-bottom: 8px;
+  color: #1a1a1a;
 }
 
-.work-card p {
-  font-size: 13px;
+.modal-subtitle {
+  font-family: 'Space Mono', monospace;
+  font-size: 14px;
   color: #555;
-  margin-bottom: 20px;
-  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+.modal-box p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
 }
 
 /* ================================================
@@ -500,8 +679,13 @@ canvas#dinoCanvas {
 }
 
 @keyframes blink {
-  0% { opacity: 1; }
-  100% { opacity: 0; }
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
 
 #dinoScoreBox {
@@ -562,7 +746,7 @@ canvas#dinoCanvas {
     margin-right: 0;
     margin-bottom: -2px;
   }
-  
+
   .skills-section {
     grid-template-columns: 1fr;
   }
