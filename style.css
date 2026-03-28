@@ -1,175 +1,569 @@
+/* ================================================
+   1. RESET & BASE
+   ================================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html {
+  scroll-behavior: smooth;
+}
 
-    body {
-    font-family: var(--font-main);
-  color: var(--text);
+body {
+  font-family: 'Space Mono', monospace;
+  color: #1a1a1a;
   line-height: 1.6;
   overflow-x: hidden;
-  background: #f5f0e8;
-    }
+  background: #1a1a1a;
+}
 
-    nav {
-      width: 100%;
-      background: #b0aad6;
-      border-bottom: 2px solid #2d2d2d;
-      padding: 0 28px;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-    }
+/* ================================================
+   2. NAVBAR
+   ================================================ */
+nav {
+  width: 100%;
+  background: #b0aad6;
+  border-bottom: 3px solid #1a1a1a;
+  padding: 0 28px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
 
-    /* Logo */
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-      color: #1a1a1a;
-    }
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #1a1a1a;
+}
 
-    .logo-icon {
-      width: 32px;
-      height: 32px;
-    }
+.logo-icon {
+  width: 32px;
+  height: 32px;
+}
 
-    .logo-text {
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      color: #1a1a1a;
-    }
+.logo-text {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #1a1a1a;
+}
 
-    /* Nav links group */
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 0;
-    }
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
 
-    .nav-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      height: 36px;
-      padding: 0 16px;
-      font-family: 'Space Mono', monospace;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      border: 2px solid #1a1a1a;
-      background: transparent;
-      color: #1a1a1a;
-      cursor: pointer;
-      text-decoration: none;
-      position: relative;
-      margin-left: -2px;
-      transition: background 0.12s, color 0.12s, transform 0.1s;
-      white-space: nowrap;
-      user-select: none;
-    }
+.nav-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  padding: 0 16px;
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 2px solid #1a1a1a;
+  background: transparent;
+  color: #1a1a1a;
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+  margin-left: -2px;
+  transition: background 0.12s, color 0.12s;
+  white-space: nowrap;
+  user-select: none;
+}
 
-    .nav-btn:first-child { margin-left: 0; }
+.nav-btn:first-child {
+  margin-left: 0;
+}
 
-    .nav-btn:hover {
-      background: #1a1a1a;
-      color: #f5f0ff;
-      z-index: 1;
-    }
+.nav-btn:hover {
+  background: #1a1a1a;
+  color: #f5f0ff;
+  z-index: 1;
+}
 
-    .nav-btn.active {
-      background: #f5c842;
-      color: #1a1a1a;
-      z-index: 2;
-      border-color: #1a1a1a;
-    }
+.nav-btn.active {
+  background: #f5c842;
+  color: #1a1a1a;
+  z-index: 2;
+  border-color: #1a1a1a;
+}
 
-    .nav-btn.active:hover {
-      background: #e0b800;
-      color: #1a1a1a;
-    }
+.nav-btn.active:hover {
+  background: #e0b800;
+  color: #1a1a1a;
+}
 
-    /* Right side group */
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 0;
-    }
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
 
-    .icon-btn {
-      width: 36px;
-      height: 36px;
-      border: 2px solid #1a1a1a;
-      background: transparent;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      margin-left: -2px;
-      transition: background 0.12s, color 0.12s;
-      color: #1a1a1a;
-    }
+.nav-right .icon-btn:first-child {
+  margin-left: 0;
+}
 
-    .icon-btn:hover {
-      background: #1a1a1a;
-      color: #f5f0ff;
-    }
+.icon-btn {
+  width: 36px;
+  height: 36px;
+  border: 2px solid #1a1a1a;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-left: -2px;
+  transition: background 0.12s, color 0.12s;
+  color: #1a1a1a;
+  font-size: 14px;
+}
 
-    .icon-btn svg {
-      width: 16px;
-      height: 16px;
-    }
+.icon-btn:hover {
+  background: #1a1a1a;
+  color: #f5f0ff;
+}
 
-    .enter-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      height: 36px;
-      padding: 0 18px;
-      font-family: 'Space Mono', monospace;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      border: 2px solid #1a1a1a;
-      background: #1a1a1a;
-      color: #f5f0ff;
-      cursor: pointer;
-      margin-left: -2px;
-      transition: background 0.12s, color 0.12s;
-      text-decoration: none;
-    }
+.icon-btn svg {
+  width: 16px;
+  height: 16px;
+}
 
-    .enter-btn:hover {
-      background: #3a3a3a;
-    }
+/* ================================================
+   3. HERO BACKGROUND & CONTAINERS
+   ================================================ */
+.hero-bg {
+  position: relative;
+  min-height: calc(100vh - 60px);
+  background: 
+    linear-gradient(to bottom, rgba(200, 184, 232, 0.4), rgba(142, 200, 64, 0.4)),
+    url("./assets/e0dea437-5090-436d-a086-e0cec81c5b45.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding-bottom: 50px;
+}
 
-    .enter-btn .arrow {
-      font-size: 14px;
-      display: inline-block;
-      transform: rotate(-45deg);
-      transition: transform 0.15s;
-    }
+.content-wrap {
+  position: relative;
+  z-index: 10;
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
 
-    .enter-btn:hover .arrow {
-      transform: rotate(-45deg) translate(2px, -2px);
-    }
+.hero-card {
+  background: #f0ece0;
+  border: 3px solid #1a1a1a;
+  box-shadow: 6px 6px 0 #1a1a1a;
+  padding: 36px 40px 40px;
+  border-radius: 0;
+}
 
-    /* Separator line below nav */
-    .underline {
-      width: 100%;
-      height: px;
-      background: solid black;
-    }
+/* ================================================
+   4. INTRO SECTION (#hello)
+   ================================================ */
+.intro {
+  position: relative;
+  background-color: #d8f0dc;
+  border: 2px solid #1a1a1a;
+  padding: 40px;
+  margin: 10px auto 10px;
+  max-width: 1000px;
+  text-align: center;
+}
 
+.hero-title {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(28px, 5vw, 48px);
+  font-weight: 700;
+  color: #1a1a1a;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: 18px;
+}
 
-.bgimage{
-    background-size: cover;        /* Makes image cover full screen */
-    background-position: center;   /* Centers the image */
-    background-repeat: no-repeat;  /* Prevents repeating */
-    height: 100vh;
-    margin: 0;
+.hero-desc {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #333;
+  max-width: 580px;
+  margin: 0 auto 28px;
+}
+
+.hero-desc strong {
+  color: #1a1a1a;
+  background: #f5c842;
+  padding: 0 3px;
+}
+
+.hero-btns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0;
+  margin-bottom: 28px;
+}
+
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  padding: 0 20px;
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 2px solid #1a1a1a;
+  cursor: pointer;
+  transition: transform 0.1s, box-shadow 0.1s;
+  margin-right: -2px;
+  margin-bottom: -2px;
+  white-space: nowrap;
+}
+
+.hero-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0 #1a1a1a;
+  z-index: 1;
+}
+
+.hero-btn:active {
+  transform: translate(1px, 1px);
+  box-shadow: none;
+}
+
+.hero-stats {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #555;
+  margin-bottom: 0;
+}
+
+.hero-stats strong {
+  color: #1a1a1a;
+}
+
+.stat-dot {
+  color: #aaa;
+  font-weight: 700;
+}
+
+/* ================================================
+   5. SHARED UTILITIES & COMPONENTS
+   ================================================ */
+.section-title {
+  font-family: 'Space Mono', monospace;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #1a1a1a;
+  margin-bottom: 24px;
+  border-left: 4px solid #9b7fe8;
+  padding-left: 10px;
+}
+
+.divider {
+  border: none;
+  border-top: 2px solid #c8c0a8;
+  margin: 32px 0;
+}
+
+/* Button & Card Palette */
+.btn-purple { background: #9b7fe8; color: #fff; }
+.btn-dark { background: #1a1a1a; color: #f5f0ff; }
+.btn-green { background: #5ec870; color: #1a1a1a; }
+.card-purple { background: #e8e0f8; }
+.card-yellow { background: #fdf3c8; }
+.card-green { background: #d8f0dc; }
+.card-blue { background: #d0e8f8; }
+
+/* ================================================
+   6. SKILLS SECTION
+   ================================================ */
+.skills-section {
+  padding: 40px;
+  background: #e8e0f8; /* Retro purple from palette */
+  border: 2px solid #1a1a1a;
+  margin: 10px auto 10px;
+  max-width: 1000px;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.skill-group {
+  background: #fff;
+  border: 2px solid #1a1a1a; /* Chunky black borders */
+  border-radius: 0; /* Removing rounded corners for pixel retro aesthetic */
+  padding: 24px;
+  position: relative;
+  box-shadow: 4px 4px 0 #1a1a1a;
+  display: flex;
+  flex-direction: column;
+}
+
+.skill-title {
+  color: #1a1a1a;
+  font-family: 'Space Mono', monospace;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.skill-divider {
+  height: 2px;
+  background: #1a1a1a;
+  margin: 16px 0;
+  border: none;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.skill-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  background: #f0ece0; /* Beige */
+  border: 2px solid #1a1a1a;
+  border-radius: 0;
+  color: #1a1a1a;
+  font-family: 'Space Mono', monospace;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.skill-tag:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 3px 3px 0 #1a1a1a;
+  background: #9b7fe8; /* Violet accent */
+  color: #fff;
+}
+
+/* ================================================
+   7. WORK SECTION
+   ================================================ */
+.work-section {
+  background-color: #d0e8f8;
+  border: 2px solid #1a1a1a;
+  padding: 40px;
+  margin: 10px auto 10px;
+  max-width: 1000px;
+}
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.work-card {
+  border: 2px solid #1a1a1a;
+  padding: 24px;
+  background: #fff;
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.work-card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 6px 6px 0 #1a1a1a;
+}
+
+.work-thumb {
+  height: 140px;
+  background: #f0f0f0;
+  border: 2px solid #1a1a1a;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+}
+
+.work-card h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.work-card p {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+/* ================================================
+   8. CONTACT SECTION
+   ================================================ */
+.contact-section {
+  background-color: #fdf3c8;
+  border: 2px solid #1a1a1a;
+  padding: 40px;
+  margin: 10px auto 10px;
+  max-width: 1000px;
+}
+
+.contact-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.contact-card {
+  width: 100%;
+  max-width: 600px;
+  padding: 32px;
+  border: 2px solid #1a1a1a;
+  background: #fff;
+}
+
+.contact-btns {
+  display: flex;
+  gap: 12px;
+}
+
+/* ================================================
+   9. GAME SECTION
+   ================================================ */
+.game-section {
+  background-color: #d8f0dc;
+  border: 2px solid #1a1a1a;
+  padding: 40px;
+  margin: 10px auto 10px;
+  max-width: 1000px;
+}
+
+.dino-game-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: 150px;
+  margin: 0 auto 28px;
+  border: none;
+  background-color: #f7f7f7;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+canvas#dinoCanvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  image-rendering: pixelated;
+}
+
+.dino-msg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 14px;
+  font-weight: 700;
+  color: #535353;
+  text-transform: uppercase;
+  pointer-events: none;
+  animation: blink 1s infinite alternate;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+#dinoScoreBox {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 700;
+  font-size: 16px;
+  color: #535353;
+  letter-spacing: 2px;
+}
+
+/* ================================================
+   10. GROUND STRIP (Footer styling)
+   ================================================ */
+.ground {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 56px;
+  background: #5a9e30;
+  border-top: 4px solid #1a1a1a;
+  z-index: 1;
+}
+
+.ground::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  background:
+    repeating-linear-gradient(90deg,
+      #6ec840 0px, #6ec840 16px,
+      #5a9e30 16px, #5a9e30 32px);
+}
+
+/* ================================================
+   11. RESPONSIVE QUERIES
+   ================================================ */
+@media (max-width: 700px) {
+  .hero-card {
+    padding: 24px 20px 28px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hero-btns {
+    flex-direction: column;
+  }
+
+  .hero-btn {
+    margin-right: 0;
+    margin-bottom: -2px;
+  }
+  
+  .skills-section {
+    grid-template-columns: 1fr;
+  }
 }
