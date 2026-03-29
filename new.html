@@ -18,8 +18,7 @@
       --pink: #f0b8c8;
       --orange: #f0c890;
       --black: #111111;
-      --border: 1px solid rgba(0, 0, 0, 0.08);
-      /* thin border */
+      --border: 2px solid var(--black);
       --sh: 0 8px 24px rgba(0, 0, 0, 0.05);
       /* soft shadow */
       --sh-lg: 0 16px 40px rgba(0, 0, 0, 0.12);
@@ -38,7 +37,6 @@
     html {
       scroll-behavior: smooth;
       font-size: 111%;
-      scroll-snap-type: y mandatory;
       scroll-padding-top: 54px;
     }
 
@@ -233,7 +231,6 @@
       position: relative;
       z-index: 1;
       min-height: 100vh;
-      scroll-snap-align: start;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -816,7 +813,6 @@
     .proj-title {
       font-size: .97rem;
       font-weight: 700;
-      margin-bottom: 8px
     }
 
     .proj-desc {
@@ -1369,16 +1365,17 @@
           <div class="intern-card">
             <div class="intern-head">
               <div>
-                <div class="intern-role">Frontend Developer Intern</div>
-                <div class="intern-co">TechStartup Pvt. Ltd. &nbsp;·&nbsp; Remote</div>
+                <div class="intern-role">Python Developer Intern</div>
+                <div class="intern-co">Shadowfox &nbsp;·&nbsp; Remote</div>
               </div>
-              <div class="intern-date">Jun 2024 – Aug 2024</div>
+              <div class="intern-date">Jul 2025 – Aug 2025</div>
             </div>
-            <div><span class="tag y">React</span><span class="tag g">Node.js</span><span class="tag l">Figma</span><span
-                class="tag p">REST API</span></div>
-            <p class="intern-desc">Built and maintained responsive UI components for the company's SaaS dashboard.
-              Collaborated with designers to implement pixel-perfect layouts. Improved page load performance by 35%
-              through code splitting and lazy loading strategies.</p>
+            <div><span class="tag y">Python</span><span class="tag g">Pandas</span><span class="tag l">NumPy</span><span class="tag p">Git</span></div>
+            <p class="intern-desc">
+              • Assisted in developing and testing Python scripts and applications with guidance from senior developers.<br>
+              • Supported data collection, cleaning, and basic analysis using Python libraries such as Pandas and NumPy.<br>
+              • Collaborated with team to fix code issues and learned software development best practices and debugging techniques.
+            </p>
           </div>
         </div>
 
@@ -1387,16 +1384,17 @@
           <div class="intern-card">
             <div class="intern-head">
               <div>
-                <div class="intern-role">Web Development Intern</div>
-                <div class="intern-co">Digital Agency XYZ &nbsp;·&nbsp; Hybrid</div>
+                <div class="intern-role">Web Developer Intern</div>
+                <div class="intern-co">Prodigy Infotech &nbsp;·&nbsp; Remote</div>
               </div>
-              <div class="intern-date">Jan 2024 – Mar 2024</div>
+              <div class="intern-date">Jun 2025 – Jul 2025</div>
             </div>
-            <div><span class="tag p">HTML/CSS</span><span class="tag o">JavaScript</span><span
-                class="tag l">WordPress</span></div>
-            <p class="intern-desc">Developed client websites from wireframe to deployment. Managed 5+ client projects
-              simultaneously. Integrated third-party APIs and automated reporting workflows — saving 4 hours per week on
-              manual tasks.</p>
+            <div><span class="tag p">HTML/CSS</span><span class="tag o">JavaScript</span><span class="tag l">GitHub</span></div>
+            <p class="intern-desc">
+              • Developed responsive web applications using HTML, CSS, and JavaScript with focus on user experience.<br>
+              • Optimized web applications for performance, accessibility, and cross-browser compatibility.<br>
+              • Utilized Git/GitHub for version control and deployed projects on cloud platforms.
+            </p>
           </div>
         </div>
 
@@ -1427,10 +1425,11 @@
       <h2 class="section-title">Projects & Builds.</h2>
       <div class="proj-grid">
 
-        <div class="proj-card fi" style="background:var(--yellow)">
-          <div class="proj-top"><span class="proj-num">01</span><span class="proj-emoji">🌐</span></div>
+        <!-- <div class="proj-card fi" style="background:var(--yellow)">
+          <div class="proj-top">
+            <div class="proj-title">Personal Portfolio</div><span class="proj-emoji">🌐</span>
+          </div>
           <div class="proj-body">
-            <div class="proj-title">Personal Portfolio</div>
             <p class="proj-desc">This very site — built with pure HTML, CSS &amp; JS. Brutalist design inspired by
               Pollinations.ai. Fully responsive, hand-coded from scratch.</p>
           </div>
@@ -1439,26 +1438,30 @@
             <div style="display:flex"><a href="#" class="proj-link">LIVE ↗</a><a href="#" class="proj-link gh">CODE
                 ↗</a></div>
           </div>
-        </div>
+        </div> -->
 
-        <div class="proj-card fi">
-          <div class="proj-top"><span class="proj-num">02</span><span class="proj-emoji">🤖</span></div>
+        <div class="proj-card fi" style="background:var(--pink)">
+          <div class="proj-top">
+            <div class="proj-title">Movie Recommendation System</div><span class="proj-emoji">🎬</span>
+          </div>
           <div class="proj-body">
-            <div class="proj-title">AI Chat Interface</div>
-            <p class="proj-desc">A sleek chat UI integrating multiple AI models via API. Real-time streaming responses,
-              conversation history, and model switching in one interface.</p>
+            <p class="proj-desc">
+              • Developed recommendation system suggesting movies based on user preferences using cosine similarity with movie metadata.<br>
+              • Deployed interactive web application with Streamlit featuring dynamic filtering options.<br>
+              • Processed TMDB dataset from Kaggle using Pandas and NumPy for efficient feature engineering.
+            </p>
           </div>
           <div class="proj-foot">
-            <div><span class="tag l">React</span><span class="tag g">Node.js</span><span class="tag p">API</span></div>
-            <div style="display:flex"><a href="#" class="proj-link">LIVE ↗</a><a href="#" class="proj-link gh">CODE
-                ↗</a></div>
+            <div><span class="tag y">Python</span><span class="tag g">Streamlit</span><span class="tag l">TMDB API</span></div>
+            <div style="display:flex"><a href="#" class="proj-link">LIVE ↗</a><a href="#" class="proj-link gh">CODE ↗</a></div>
           </div>
         </div>
 
-        <div class="proj-card fi" style="background:var(--green)">
-          <div class="proj-top"><span class="proj-num">03</span><span class="proj-emoji">📊</span></div>
+        <!-- <div class="proj-card fi" style="background:var(--green)">
+          <div class="proj-top">
+            <div class="proj-title">Expense Tracker</div><span class="proj-emoji">📊</span>
+          </div>
           <div class="proj-body">
-            <div class="proj-title">Expense Tracker</div>
             <p class="proj-desc">Full-stack expense tracking app with visual analytics, budget alerts, and CSV export.
               Monthly breakdowns &amp; smart category tagging.</p>
           </div>
@@ -1467,27 +1470,30 @@
             <div style="display:flex"><a href="#" class="proj-link">LIVE ↗</a><a href="#" class="proj-link gh">CODE
                 ↗</a></div>
           </div>
-        </div>
+        </div> -->
 
-        <div class="proj-card fi">
-          <div class="proj-top"><span class="proj-num">04</span><span class="proj-emoji">🎮</span></div>
+        <div class="proj-card fi" style="background:var(--orange)">
+          <div class="proj-top">
+            <div class="proj-title">Heart Disease Prediction</div><span class="proj-emoji">❤️</span>
+          </div>
           <div class="proj-body">
-            <div class="proj-title">Quiz &amp; Aptitude Engine</div>
-            <p class="proj-desc">Interactive quiz platform for competitive exam prep. Timed sessions, score analytics,
-              difficulty levels, and auto-generated question banks.</p>
+            <p class="proj-desc">
+              • Developed ML model to predict likelihood of heart disease using Logistic Regression and Random Forest.<br>
+              • Implemented SMOTE technique to handle class imbalance and improve model accuracy.<br>
+              • Performed comprehensive data preprocessing and feature selection using Pandas and NumPy.
+            </p>
           </div>
           <div class="proj-foot">
-            <div><span class="tag y">Python</span><span class="tag o">Flask</span><span class="tag l">SQLite</span>
-            </div>
-            <div style="display:flex"><a href="#" class="proj-link">LIVE ↗</a><a href="#" class="proj-link gh">CODE
-                ↗</a></div>
+            <div><span class="tag y">Python</span><span class="tag g">Scikit-learn</span><span class="tag l">ML</span></div>
+            <div style="display:flex"><a href="#" class="proj-link">LIVE ↗</a><a href="#" class="proj-link gh">CODE ↗</a></div>
           </div>
         </div>
 
-        <div class="proj-card fi" style="background:var(--lav)">
-          <div class="proj-top"><span class="proj-num">05</span><span class="proj-emoji">✍️</span></div>
+        <!-- <div class="proj-card fi" style="background:var(--lav)">
+          <div class="proj-top">
+            <div class="proj-title">Dev Blog</div><span class="proj-emoji">✍️</span>
+          </div>
           <div class="proj-body">
-            <div class="proj-title">Dev Blog</div>
             <p class="proj-desc">A markdown-powered blog where I write about web dev, design experiments, and things I
               learn on my journey as a developer.</p>
           </div>
@@ -1496,13 +1502,13 @@
             <div style="display:flex"><a href="#" class="proj-link">LIVE ↗</a><a href="#" class="proj-link gh">CODE
                 ↗</a></div>
           </div>
-        </div>
+        </div> -->
 
         <div class="proj-card fi" style="background:var(--black);color:var(--cream)">
-          <div class="proj-top" style="border-bottom-color:#2a2a2a"><span class="proj-num"
-              style="background:var(--cream);color:var(--black)">06</span><span class="proj-emoji">🔮</span></div>
+          <div class="proj-top" style="border-bottom-color:#2a2a2a">
+            <div class="proj-title" style="color:var(--cream)">Something Cooking...</div><span class="proj-emoji">🔮</span>
+          </div>
           <div class="proj-body">
-            <div class="proj-title" style="color:var(--cream)">Something Cooking...</div>
             <p class="proj-desc" style="color:#555">Next project in progress. Always building, always shipping. Stay
               tuned. 🚧</p>
           </div>
