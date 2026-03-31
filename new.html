@@ -594,6 +594,20 @@
       width: var(--w)
     }
 
+    /* MARIO GIF */
+    .mario-container {
+      display: inline-flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 2rem;
+    }
+
+    .mario-gif {
+      width: 100px;
+      height: 100px;
+      image-rendering: pixelated;
+    }
+
     .fill-y {
       background: var(--yellow)
     }
@@ -1357,7 +1371,10 @@
   <!-- ═══ INTERNSHIPS ═══ -->
   <section id="internships">
     <div class="section-inner">
-      <h2 class="section-title">Internships & Experience.</h2>
+      <div class="mario-container">
+        <h2 class="section-title" style="margin-bottom:0">Internships & Experience.</h2>
+        <img src="./assets/df0f92_5e879a1f2cf44635b6ba638183b86fdd~mv2.gif" alt="Super Mario Running" class="mario-gif">
+      </div>
       <div class="timeline">
 
         <div class="tl-item fi">
@@ -1370,11 +1387,15 @@
               </div>
               <div class="intern-date">Jul 2025 – Aug 2025</div>
             </div>
-            <div><span class="tag y">Python</span><span class="tag g">Pandas</span><span class="tag l">NumPy</span><span class="tag p">Git</span></div>
+            <div><span class="tag y">Python</span><span class="tag g">Pandas</span><span class="tag l">NumPy</span><span
+                class="tag p">Git</span></div>
             <p class="intern-desc">
-              • Assisted in developing and testing Python scripts and applications with guidance from senior developers.<br>
-              • Supported data collection, cleaning, and basic analysis using Python libraries such as Pandas and NumPy.<br>
-              • Collaborated with team to fix code issues and learned software development best practices and debugging techniques.
+              • Assisted in developing and testing Python scripts and applications with guidance from senior
+              developers.<br>
+              • Supported data collection, cleaning, and basic analysis using Python libraries such as Pandas and
+              NumPy.<br>
+              • Collaborated with team to fix code issues and learned software development best practices and debugging
+              techniques.
             </p>
           </div>
         </div>
@@ -1389,7 +1410,8 @@
               </div>
               <div class="intern-date">Jun 2025 – Jul 2025</div>
             </div>
-            <div><span class="tag p">HTML/CSS</span><span class="tag o">JavaScript</span><span class="tag l">GitHub</span></div>
+            <div><span class="tag p">HTML/CSS</span><span class="tag o">JavaScript</span><span
+                class="tag l">GitHub</span></div>
             <p class="intern-desc">
               • Developed responsive web applications using HTML, CSS, and JavaScript with focus on user experience.<br>
               • Optimized web applications for performance, accessibility, and cross-browser compatibility.<br>
@@ -1446,14 +1468,17 @@
           </div>
           <div class="proj-body">
             <p class="proj-desc">
-              • Developed recommendation system suggesting movies based on user preferences using cosine similarity with movie metadata.<br>
+              • Developed recommendation system suggesting movies based on user preferences using cosine similarity with
+              movie metadata.<br>
               • Deployed interactive web application with Streamlit featuring dynamic filtering options.<br>
               • Processed TMDB dataset from Kaggle using Pandas and NumPy for efficient feature engineering.
             </p>
           </div>
           <div class="proj-foot">
-            <div><span class="tag y">Python</span><span class="tag g">Streamlit</span><span class="tag l">TMDB API</span></div>
-            <div style="display:flex"><a href="#" class="proj-link">LIVE ↗</a><a href="#" class="proj-link gh">CODE ↗</a></div>
+            <div><span class="tag y">Python</span><span class="tag g">Streamlit</span><span class="tag l">TMDB
+                API</span></div>
+            <div style="display:flex"><a href="#" class="proj-link">LIVE ↗</a><a href="#" class="proj-link gh">CODE
+                ↗</a></div>
           </div>
         </div>
 
@@ -1478,14 +1503,17 @@
           </div>
           <div class="proj-body">
             <p class="proj-desc">
-              • Developed ML model to predict likelihood of heart disease using Logistic Regression and Random Forest.<br>
+              • Developed ML model to predict likelihood of heart disease using Logistic Regression and Random
+              Forest.<br>
               • Implemented SMOTE technique to handle class imbalance and improve model accuracy.<br>
               • Performed comprehensive data preprocessing and feature selection using Pandas and NumPy.
             </p>
           </div>
           <div class="proj-foot">
-            <div><span class="tag y">Python</span><span class="tag g">Scikit-learn</span><span class="tag l">ML</span></div>
-            <div style="display:flex"><a href="#" class="proj-link">LIVE ↗</a><a href="#" class="proj-link gh">CODE ↗</a></div>
+            <div><span class="tag y">Python</span><span class="tag g">Scikit-learn</span><span class="tag l">ML</span>
+            </div>
+            <div style="display:flex"><a href="#" class="proj-link">LIVE ↗</a><a href="#" class="proj-link gh">CODE
+                ↗</a></div>
           </div>
         </div>
 
@@ -1506,7 +1534,8 @@
 
         <div class="proj-card fi" style="background:var(--black);color:var(--cream)">
           <div class="proj-top" style="border-bottom-color:#2a2a2a">
-            <div class="proj-title" style="color:var(--cream)">Something Cooking...</div><span class="proj-emoji">🔮</span>
+            <div class="proj-title" style="color:var(--cream)">Something Cooking...</div><span
+              class="proj-emoji">🔮</span>
           </div>
           <div class="proj-body">
             <p class="proj-desc" style="color:#555">Next project in progress. Always building, always shipping. Stay
